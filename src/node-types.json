@@ -205,7 +205,15 @@
     "named": false
   },
   {
+    "type": "[Captures]",
+    "named": false
+  },
+  {
     "type": "[FormParams]",
+    "named": false
+  },
+  {
+    "type": "[MultipartFormData]",
     "named": false
   },
   {
