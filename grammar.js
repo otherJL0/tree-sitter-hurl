@@ -6,9 +6,10 @@ module.exports = grammar({
 		request: ($) =>
 			seq(
 				$.method,
-				/[a-z:\/\.]+/,
-				$._lt,
+        $.url,
+				repeat1($._lt),
 				repeat($.header),
+				repeat1($._lt),
 				repeat($.request_section),
 			),
 
@@ -25,13 +26,15 @@ module.exports = grammar({
 				"PATCH",
 			),
 
-		header: ($) => seq(repeat($._lt), $._key_value, $._lt),
+    url: (_) => /[^#\n\\]+/,
+
+		header: ($) => seq($._key_value, $._lt),
 		_key_value: ($) => seq($.key, ":", $.value),
 		key: (_) => /[^#:\n\\]+/,
 		value: (_) => /[^#\n\\]+/,
 
 		request_section: ($) =>
-			seq(repeat($._lt), "[", /[A-Za-z]+/, "]", $._lt, repeat($._key_value)),
+			seq("[", /[A-Za-z]+/, "]", $._lt, repeat($._key_value)),
 
 		version: (_) => choice("HTTP/1.0", "HTTP/1.1", "HTTP/2", "HTTP/*"),
 		status: (_) => /\d+/,

@@ -50,6 +50,10 @@
         {
           "type": "request_section",
           "named": true
+        },
+        {
+          "type": "url",
+          "named": true
         }
       ]
     }
@@ -91,6 +95,16 @@
         }
       ]
     }
+  },
+  {
+    "type": "url",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "value",
+    "named": true,
+    "fields": {}
   },
   {
     "type": ":",
@@ -162,10 +176,6 @@
   },
   {
     "type": "key",
-    "named": true
-  },
-  {
-    "type": "value",
     "named": true
   }
 ]

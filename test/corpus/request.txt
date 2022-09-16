@@ -6,7 +6,7 @@ GET https://example.org/api/dogs
 
 ---
 
-(source_file (request (method)))
+(source_file (request (method) (url)))
 
 
 ===
@@ -17,7 +17,7 @@ GET https://example.org/api/dogs # Hello
 
 ---
 
-(source_file (request (method) (comment)))
+(source_file (request (method) (url) (comment)))
 
 ===
 simple GET with header
@@ -28,7 +28,7 @@ user-agent: my user agent
 
 ---
 
-(source_file (request (method) (header (key) (value))))
+(source_file (request (method) (url) (header (key) (value))))
 
 ===
 simple GET with header multiple headers
@@ -41,6 +41,6 @@ Content-Type: application/json
 ---
 
 (source_file 
- (request (method) 
+ (request (method) (url)
   (header (key) (value)) 
   (header (key) (value))))
