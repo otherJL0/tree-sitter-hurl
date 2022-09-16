@@ -1,6 +1,6 @@
-===
+==========
 Simple GET
-===
+==========
 
 GET https://example.org/api/dogs
 
@@ -9,9 +9,9 @@ GET https://example.org/api/dogs
 (source_file (request (method) (url)))
 
 
-===
+=======================
 Simple GET with comment
-===
+=======================
 
 GET https://example.org/api/dogs # Hello
 
@@ -19,9 +19,9 @@ GET https://example.org/api/dogs # Hello
 
 (source_file (request (method) (url) (comment)))
 
-===
+======================
 simple GET with header
-===
+======================
 
 GET https://example.org/api/dogs
 user-agent: my user agent
@@ -30,9 +30,9 @@ user-agent: my user agent
 
 (source_file (request (method) (url) (header (key) (value))))
 
-===
+=======================================
 simple GET with header multiple headers
-===
+=======================================
 
 GET https://example.org/api/dogs
 user-agent: my user agent
@@ -44,3 +44,17 @@ Content-Type: application/json
  (request (method) (url)
   (header (key) (value)) 
   (header (key) (value))))
+
+=================================
+Simple GET with QueryStringParams
+=================================
+
+GET https://example.org/api/dogs
+[QueryStringParams]
+hello: world
+
+---
+
+(source_file 
+ (request (method) (url)
+  (request_section (query_string_params_section (key) (value)))))

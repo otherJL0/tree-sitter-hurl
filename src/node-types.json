@@ -1,5 +1,28 @@
 [
   {
+    "type": "form_params_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "key",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "header",
     "named": true,
     "fields": {},
@@ -26,6 +49,29 @@
     "type": "method",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "query_string_params_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "key",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "request",
@@ -63,19 +109,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
-      "required": false,
+      "multiple": false,
+      "required": true,
       "types": [
         {
-          "type": "comment",
+          "type": "form_params_section",
           "named": true
         },
         {
-          "type": "key",
-          "named": true
-        },
-        {
-          "type": "value",
+          "type": "query_string_params_section",
           "named": true
         }
       ]
@@ -163,11 +205,11 @@
     "named": false
   },
   {
-    "type": "[",
+    "type": "[FormParams]",
     "named": false
   },
   {
-    "type": "]",
+    "type": "[QueryStringParams]",
     "named": false
   },
   {

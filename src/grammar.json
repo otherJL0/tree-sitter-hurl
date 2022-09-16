@@ -126,26 +126,51 @@
     },
     "key": {
       "type": "PATTERN",
-      "value": "[^#:\\n\\\\]+"
+      "value": "[^#:\\n\\\\\\[][^#:\\n\\\\]+"
     },
     "value": {
       "type": "PATTERN",
       "value": "[^#\\n\\\\]+"
     },
     "request_section": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "query_string_params_section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "form_params_section"
+        }
+      ]
+    },
+    "query_string_params_section": {
       "type": "SEQ",
       "members": [
         {
           "type": "STRING",
-          "value": "["
+          "value": "[QueryStringParams]"
         },
         {
-          "type": "PATTERN",
-          "value": "[A-Za-z]+"
+          "type": "SYMBOL",
+          "name": "_lt"
         },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_key_value"
+          }
+        }
+      ]
+    },
+    "form_params_section": {
+      "type": "SEQ",
+      "members": [
         {
           "type": "STRING",
-          "value": "]"
+          "value": "[FormParams]"
         },
         {
           "type": "SYMBOL",

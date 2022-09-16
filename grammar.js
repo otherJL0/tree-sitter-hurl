@@ -30,11 +30,17 @@ module.exports = grammar({
 
 		header: ($) => seq($._key_value, $._lt),
 		_key_value: ($) => seq($.key, ":", $.value),
-		key: (_) => /[^#:\n\\]+/,
+		key: (_) => /[^#:\n\\\[][^#:\n\\]+/,
 		value: (_) => /[^#\n\\]+/,
 
-		request_section: ($) =>
-			seq("[", /[A-Za-z]+/, "]", $._lt, repeat($._key_value)),
+		request_section: ($) => choice(
+      $.query_string_params_section,
+      $.form_params_section,
+    ),
+
+    query_string_params_section: ($) => seq("[QueryStringParams]", $._lt, repeat($._key_value)),
+    form_params_section: ($) => seq("[FormParams]", $._lt, repeat($._key_value)),
+
 
 		version: (_) => choice("HTTP/1.0", "HTTP/1.1", "HTTP/2", "HTTP/*"),
 		status: (_) => /\d+/,
