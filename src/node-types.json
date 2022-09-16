@@ -1,43 +1,5 @@
 [
   {
-    "type": "cookies_section",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "key_value",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "form_params_section",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "key_value",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "header",
     "named": true,
     "fields": {},
@@ -49,21 +11,6 @@
           "type": "comment",
           "named": true
         },
-        {
-          "type": "key_value",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "key_value",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
         {
           "type": "key",
           "named": true
@@ -79,25 +26,6 @@
     "type": "method",
     "named": true,
     "fields": {}
-  },
-  {
-    "type": "query_string_params_section",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
-        {
-          "type": "key_value",
-          "named": true
-        }
-      ]
-    }
   },
   {
     "type": "request",
@@ -131,19 +59,19 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": true,
+      "multiple": true,
+      "required": false,
       "types": [
         {
-          "type": "cookies_section",
+          "type": "comment",
           "named": true
         },
         {
-          "type": "form_params_section",
+          "type": "key",
           "named": true
         },
         {
-          "type": "query_string_params_section",
+          "type": "value",
           "named": true
         }
       ]
@@ -221,15 +149,11 @@
     "named": false
   },
   {
-    "type": "[Cookies]",
+    "type": "[",
     "named": false
   },
   {
-    "type": "[FormParams]",
-    "named": false
-  },
-  {
-    "type": "[QueryStringParams]",
+    "type": "]",
     "named": false
   },
   {

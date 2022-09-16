@@ -25,23 +25,13 @@ module.exports = grammar({
 				"PATCH",
 			),
 
-		header: ($) => seq(repeat($._lt), $.key_value, $._lt),
-		key_value: ($) => seq($.key, ":", $.value),
+		header: ($) => seq(repeat($._lt), $._key_value, $._lt),
+		_key_value: ($) => seq($.key, ":", $.value),
 		key: (_) => /[^#:\n\\]+/,
 		value: (_) => /[^#\n\\]+/,
 
 		request_section: ($) =>
-			choice(
-				$.query_string_params_section,
-				$.form_params_section,
-				$.cookies_section,
-			),
-
-		query_string_params_section: ($) =>
-			seq(repeat($._lt), "[QueryStringParams]", $._lt, $.key_value),
-		form_params_section: ($) =>
-			seq(repeat($._lt), "[FormParams]", $._lt, $.key_value),
-		cookies_section: ($) => seq(repeat($._lt), "[Cookies]", $._lt, $.key_value),
+			seq(repeat($._lt), "[", /[A-Za-z]+/, "]", $._lt, repeat($._key_value)),
 
 		version: (_) => choice("HTTP/1.0", "HTTP/1.1", "HTTP/2", "HTTP/*"),
 		status: (_) => /\d+/,

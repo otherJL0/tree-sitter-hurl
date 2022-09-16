@@ -28,7 +28,7 @@ user-agent: my user agent
 
 ---
 
-(source_file (request (method) (header (key_value (key) (value)))))
+(source_file (request (method) (header (key) (value))))
 
 ===
 simple GET with header multiple headers
@@ -42,5 +42,5 @@ Content-Type: application/json
 
 (source_file 
  (request (method) 
-  (header (key_value (key) (value))) 
-  (header (key_value (key) (value)))))
+  (header (key) (value)) 
+  (header (key) (value))))
