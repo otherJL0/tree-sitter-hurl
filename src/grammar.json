@@ -5,12 +5,91 @@
       "type": "REPEAT",
       "content": {
         "type": "SYMBOL",
-        "name": "entry"
+        "name": "request"
       }
     },
-    "entry": {
-      "type": "STRING",
-      "value": "GET"
+    "request": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "method"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[a-z:\\/\\.]+"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_lt"
+        }
+      ]
+    },
+    "method": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "GET"
+        },
+        {
+          "type": "STRING",
+          "value": "HEAD"
+        },
+        {
+          "type": "STRING",
+          "value": "POST"
+        },
+        {
+          "type": "STRING",
+          "value": "PUT"
+        },
+        {
+          "type": "STRING",
+          "value": "DELETE"
+        },
+        {
+          "type": "STRING",
+          "value": "CONNECT"
+        },
+        {
+          "type": "STRING",
+          "value": "OPTIONS"
+        },
+        {
+          "type": "STRING",
+          "value": "TRACE"
+        },
+        {
+          "type": "STRING",
+          "value": "PATCH"
+        }
+      ]
+    },
+    "version": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "HTTP/1.0"
+        },
+        {
+          "type": "STRING",
+          "value": "HTTP/1.1"
+        },
+        {
+          "type": "STRING",
+          "value": "HTTP/2"
+        },
+        {
+          "type": "STRING",
+          "value": "HTTP/*"
+        }
+      ]
+    },
+    "status": {
+      "type": "PATTERN",
+      "value": "\\d+"
     },
     "comment": {
       "type": "PATTERN",
@@ -19,6 +98,34 @@
     "_sp": {
       "type": "PATTERN",
       "value": "[\\s\\t]"
+    },
+    "_lt": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_sp"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "comment"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "PATTERN",
+          "value": "[\\n]?"
+        }
+      ]
     }
   },
   "extras": [

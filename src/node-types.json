@@ -1,5 +1,29 @@
 [
   {
+    "type": "method",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "request",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "method",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -8,18 +32,66 @@
       "required": false,
       "types": [
         {
-          "type": "entry",
+          "type": "request",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "comment",
-    "named": true
+    "type": "CONNECT",
+    "named": false
   },
   {
-    "type": "entry",
+    "type": "DELETE",
+    "named": false
+  },
+  {
+    "type": "GET",
+    "named": false
+  },
+  {
+    "type": "HEAD",
+    "named": false
+  },
+  {
+    "type": "HTTP/*",
+    "named": false
+  },
+  {
+    "type": "HTTP/1.0",
+    "named": false
+  },
+  {
+    "type": "HTTP/1.1",
+    "named": false
+  },
+  {
+    "type": "HTTP/2",
+    "named": false
+  },
+  {
+    "type": "OPTIONS",
+    "named": false
+  },
+  {
+    "type": "PATCH",
+    "named": false
+  },
+  {
+    "type": "POST",
+    "named": false
+  },
+  {
+    "type": "PUT",
+    "named": false
+  },
+  {
+    "type": "TRACE",
+    "named": false
+  },
+  {
+    "type": "comment",
     "named": true
   }
 ]

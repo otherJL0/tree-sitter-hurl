@@ -1,0 +1,20 @@
+===
+Simple get
+===
+
+GET https://example.org/api/dogs
+
+---
+
+(source_file (request (method)))
+
+
+===
+Simple get with comment
+===
+
+GET https://example.org/api/dogs # Hello
+
+---
+
+(source_file (request (method) (comment)))
