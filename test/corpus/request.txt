@@ -1,5 +1,5 @@
 ===
-Simple get
+Simple GET
 ===
 
 GET https://example.org/api/dogs
@@ -10,7 +10,7 @@ GET https://example.org/api/dogs
 
 
 ===
-Simple get with comment
+Simple GET with comment
 ===
 
 GET https://example.org/api/dogs # Hello
@@ -20,12 +20,27 @@ GET https://example.org/api/dogs # Hello
 (source_file (request (method) (comment)))
 
 ===
-Simple get with header
+simple GET with header
 ===
 
 GET https://example.org/api/dogs
-User-Agent: My User Agent
+user-agent: my user agent
 
 ---
 
 (source_file (request (method) (header (key_value (key) (value)))))
+
+===
+simple GET with header multiple headers
+===
+
+GET https://example.org/api/dogs
+user-agent: my user agent
+Content-Type: application/json
+
+---
+
+(source_file 
+ (request (method) 
+  (header (key_value (key) (value))) 
+  (header (key_value (key) (value)))))
