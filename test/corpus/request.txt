@@ -18,3 +18,14 @@ GET https://example.org/api/dogs # Hello
 ---
 
 (source_file (request (method) (comment)))
+
+===
+Simple get with header
+===
+
+GET https://example.org/api/dogs
+User-Agent: My User Agent
+
+---
+
+(source_file (request (method) (header (key_value (key) (value)))))

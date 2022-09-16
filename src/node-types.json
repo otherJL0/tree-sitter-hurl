@@ -1,8 +1,103 @@
 [
   {
+    "type": "cookies_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "key_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "form_params_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "key_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "header",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "key_value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "key_value",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "key",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "method",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "query_string_params_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "key_value",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "request",
@@ -17,7 +112,38 @@
           "named": true
         },
         {
+          "type": "header",
+          "named": true
+        },
+        {
           "type": "method",
+          "named": true
+        },
+        {
+          "type": "request_section",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "request_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "cookies_section",
+          "named": true
+        },
+        {
+          "type": "form_params_section",
+          "named": true
+        },
+        {
+          "type": "query_string_params_section",
           "named": true
         }
       ]
@@ -37,6 +163,10 @@
         }
       ]
     }
+  },
+  {
+    "type": ":",
+    "named": false
   },
   {
     "type": "CONNECT",
@@ -91,7 +221,27 @@
     "named": false
   },
   {
+    "type": "[Cookies]",
+    "named": false
+  },
+  {
+    "type": "[FormParams]",
+    "named": false
+  },
+  {
+    "type": "[QueryStringParams]",
+    "named": false
+  },
+  {
     "type": "comment",
+    "named": true
+  },
+  {
+    "type": "key",
+    "named": true
+  },
+  {
+    "type": "value",
     "named": true
   }
 ]
