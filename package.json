@@ -7,7 +7,7 @@
     "test": "tree-sitter test",
     "prepare": "husky install",
     "format": "rome format --write .",
-    "generate": "tree-sitter generate"
+    "pretest": "tree-sitter generate"
   },
   "repository": {
     "type": "git",
