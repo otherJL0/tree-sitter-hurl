@@ -58,3 +58,17 @@ hello: world
 (source_file 
  (request (method) (url)
   (request_section (query_string_params_section (key) (value)))))
+
+=================================
+Simple GET with FormParams
+=================================
+
+GET https://example.org/api/dogs
+[FormParams]
+hello: world
+
+---
+
+(source_file 
+ (request (method) (url)
+  (request_section (form_params_section (key) (value)))))
