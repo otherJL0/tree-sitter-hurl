@@ -40,9 +40,9 @@ module.exports = grammar({
 			seq("[QueryStringParams]", $._lt, repeat($._key_value)),
 		form_params_section: ($) =>
 			seq("[FormParams]", $._lt, repeat($._key_value)),
-    multipart_form_data_section: ($) =>
-      seq("[MultipartFormData]", $._lt, repeat($._key_value)),
-    cookie_section: ($) => seq("[Captures]", $._lt, repeat($._key_value)),
+		multipart_form_data_section: ($) =>
+			seq("[MultipartFormData]", $._lt, repeat($._key_value)),
+		cookie_section: ($) => seq("[Captures]", $._lt, repeat($._key_value)),
 
 		version: (_) => choice("HTTP/1.0", "HTTP/1.1", "HTTP/2", "HTTP/*"),
 		status: (_) => /\d+/,
