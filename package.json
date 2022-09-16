@@ -6,8 +6,8 @@
   "scripts": {
     "test": "tree-sitter test",
     "prepare": "husky install",
-    "format": "rome format --write .",
-    "pretest": "tree-sitter generate"
+    "format": "rome format --write grammar.js",
+    "pretest": "rome check --apply grammar.js && tree-sitter generate"
   },
   "repository": {
     "type": "git",
