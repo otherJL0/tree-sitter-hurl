@@ -6,7 +6,7 @@ module.exports = grammar({
 		request: ($) =>
 			seq(
 				$.method,
-        $.url,
+				$.url,
 				repeat1($._lt),
 				repeat($.header),
 				repeat1($._lt),
@@ -26,7 +26,7 @@ module.exports = grammar({
 				"PATCH",
 			),
 
-    url: (_) => /[^#\n\\]+/,
+		url: (_) => /[^#\n\\]+/,
 
 		header: ($) => seq($._key_value, $._lt),
 		_key_value: ($) => seq($.key, ":", $.value),
