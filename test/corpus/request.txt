@@ -57,7 +57,7 @@ hello: world
 
 (source_file 
  (request (method) (url)
-  (request_section (query_string_params_section (key) (value)))))
+  (request_section (header (key) (value)))))
 
 =================================
 Simple GET with FormParams
@@ -71,7 +71,7 @@ hello: world
 
 (source_file 
  (request (method) (url)
-  (request_section (form_params_section (key) (value)))))
+  (request_section (header (key) (value)))))
 
 =================================
 Simple GET with headers and FormParams
@@ -87,7 +87,7 @@ hello: world
 (source_file 
  (request (method) (url)
   (header (key) (value)) 
-  (request_section (form_params_section (key) (value)))))
+  (request_section (header (key) (value)))))
 
 
 =================================
@@ -112,4 +112,4 @@ hello: world
  (request (method) (url)
   (header (key) (value)) 
   (header (key) (value)) 
-  (request_section (form_params_section (key) (value)))))
+  (request_section (header (key) (value)))))
