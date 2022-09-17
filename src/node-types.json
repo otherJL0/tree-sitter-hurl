@@ -1,5 +1,28 @@
 [
   {
+    "type": "cookie_section",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "key",
+          "named": true
+        },
+        {
+          "type": "value",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "form_params_section",
     "named": true,
     "fields": {},
@@ -113,6 +136,10 @@
       "required": true,
       "types": [
         {
+          "type": "cookie_section",
+          "named": true
+        },
+        {
           "type": "form_params_section",
           "named": true
         },
@@ -157,7 +184,15 @@
     "named": false
   },
   {
+    "type": "Cookies",
+    "named": false
+  },
+  {
     "type": "DELETE",
+    "named": false
+  },
+  {
+    "type": "FormParams",
     "named": false
   },
   {
@@ -185,6 +220,10 @@
     "named": false
   },
   {
+    "type": "MultipartFormData",
+    "named": false
+  },
+  {
     "type": "OPTIONS",
     "named": false
   },
@@ -201,23 +240,19 @@
     "named": false
   },
   {
+    "type": "QueryStringParams",
+    "named": false
+  },
+  {
     "type": "TRACE",
     "named": false
   },
   {
-    "type": "[Captures]",
+    "type": "[",
     "named": false
   },
   {
-    "type": "[FormParams]",
-    "named": false
-  },
-  {
-    "type": "[MultipartFormData]",
-    "named": false
-  },
-  {
-    "type": "[QueryStringParams]",
+    "type": "]",
     "named": false
   },
   {

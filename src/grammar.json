@@ -13,6 +13,29 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "_method_section"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "header"
+          }
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "request_section"
+          }
+        }
+      ]
+    },
+    "_method_section": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
           "name": "method"
         },
         {
@@ -24,27 +47,6 @@
           "content": {
             "type": "SYMBOL",
             "name": "_lt"
-          }
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "header"
-          }
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_lt"
-          }
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "request_section"
           }
         }
       ]
@@ -102,8 +104,11 @@
           "name": "_key_value"
         },
         {
-          "type": "SYMBOL",
-          "name": "_lt"
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_lt"
+          }
         }
       ]
     },
@@ -142,6 +147,10 @@
         {
           "type": "SYMBOL",
           "name": "form_params_section"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "cookie_section"
         }
       ]
     },
@@ -150,7 +159,15 @@
       "members": [
         {
           "type": "STRING",
-          "value": "[QueryStringParams]"
+          "value": "["
+        },
+        {
+          "type": "STRING",
+          "value": "QueryStringParams"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
         },
         {
           "type": "SYMBOL",
@@ -170,7 +187,15 @@
       "members": [
         {
           "type": "STRING",
-          "value": "[FormParams]"
+          "value": "["
+        },
+        {
+          "type": "STRING",
+          "value": "FormParams"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
         },
         {
           "type": "SYMBOL",
@@ -190,7 +215,15 @@
       "members": [
         {
           "type": "STRING",
-          "value": "[MultipartFormData]"
+          "value": "["
+        },
+        {
+          "type": "STRING",
+          "value": "MultipartFormData"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
         },
         {
           "type": "SYMBOL",
@@ -210,7 +243,15 @@
       "members": [
         {
           "type": "STRING",
-          "value": "[Captures]"
+          "value": "["
+        },
+        {
+          "type": "STRING",
+          "value": "Cookies"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
         },
         {
           "type": "SYMBOL",
