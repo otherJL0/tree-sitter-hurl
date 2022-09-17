@@ -4,9 +4,14 @@ module.exports = grammar({
 	rules: {
 		source_file: ($) => repeat($.request),
 		request: ($) =>
-			seq($._method_section, repeat($.header), repeat($.request_section)),
+			seq(
+				$.method,
+				$.url,
+				repeat1($._lt),
+				repeat($.header),
+				repeat($.request_section),
+			),
 
-		_method_section: ($) => seq($.method, $.url, repeat1($._lt)),
 		method: (_) =>
 			choice(
 				"GET",
