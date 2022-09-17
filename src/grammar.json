@@ -13,7 +13,18 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "_method_section"
+          "name": "method"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "url"
+        },
+        {
+          "type": "REPEAT1",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_lt"
+          }
         },
         {
           "type": "REPEAT",
@@ -27,26 +38,6 @@
           "content": {
             "type": "SYMBOL",
             "name": "request_section"
-          }
-        }
-      ]
-    },
-    "_method_section": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "method"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "url"
-        },
-        {
-          "type": "REPEAT1",
-          "content": {
-            "type": "SYMBOL",
-            "name": "_lt"
           }
         }
       ]
@@ -94,7 +85,7 @@
     },
     "url": {
       "type": "PATTERN",
-      "value": "[^#\\n\\\\]+"
+      "value": "(ftp|http|https):\\/\\/[^\\s\"]+(:\\d{4})?"
     },
     "header": {
       "type": "SEQ",

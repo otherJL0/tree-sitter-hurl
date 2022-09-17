@@ -113,3 +113,17 @@ hello: world
   (header (key) (value)) 
   (header (key) (value)) 
   (request_section (header (key) (value)))))
+
+======================
+Multiple GET resquests
+======================
+
+GET https://example.org/api/dogs
+GET https://example.org/api/dogs
+
+---
+
+(source_file 
+ (request (method) (url))
+ (request (method) (url))
+ )

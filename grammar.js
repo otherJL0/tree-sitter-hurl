@@ -24,7 +24,7 @@ module.exports = grammar({
 				"TRACE",
 				"PATCH",
 			),
-		url: (_) => /[^#\n\\]+/,
+		url: (_) => /(ftp|http|https):\/\/[^\s"]+(:\d{4})?/,
 
 		header: ($) => seq($.key, ":", $.value, repeat1($._lt)),
 		// key: (_) => /[^#:\n\\]+/,

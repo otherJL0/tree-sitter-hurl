@@ -93,16 +93,6 @@
     }
   },
   {
-    "type": "url",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "value",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": ":",
     "named": false
   },
@@ -188,6 +178,14 @@
   },
   {
     "type": "key",
+    "named": true
+  },
+  {
+    "type": "url",
+    "named": true
+  },
+  {
+    "type": "value",
     "named": true
   }
 ]
