@@ -13,7 +13,27 @@
       "members": [
         {
           "type": "SYMBOL",
+          "name": "_method_section"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "request_section"
+          }
+        }
+      ]
+    },
+    "_method_section": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
           "name": "method"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_sp"
         },
         {
           "type": "SYMBOL",
@@ -31,13 +51,6 @@
           "content": {
             "type": "SYMBOL",
             "name": "header"
-          }
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "request_section"
           }
         }
       ]
