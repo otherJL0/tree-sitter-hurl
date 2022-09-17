@@ -19,13 +19,6 @@
           "type": "REPEAT",
           "content": {
             "type": "SYMBOL",
-            "name": "header"
-          }
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
             "name": "request_section"
           }
         }
@@ -48,6 +41,21 @@
             "type": "SYMBOL",
             "name": "_lt"
           }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "REPEAT",
+              "content": {
+                "type": "SYMBOL",
+                "name": "header"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },

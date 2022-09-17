@@ -72,3 +72,44 @@ hello: world
 (source_file 
  (request (method) (url)
   (request_section (form_params_section (key) (value)))))
+
+=================================
+Simple GET with headers and FormParams
+=================================
+
+GET https://example.org/api/dogs
+user-agent: my user agent
+[FormParams]
+hello: world
+
+---
+
+(source_file 
+ (request (method) (url)
+  (header (key) (value)) 
+  (request_section (form_params_section (key) (value)))))
+
+
+=================================
+Simple GET with headers and FormParams and spaces
+=================================
+
+GET https://example.org/api/dogs
+
+
+user-agent: my user agent
+
+user-agent: my user agent
+
+
+[FormParams]
+
+hello: world
+
+---
+
+(source_file 
+ (request (method) (url)
+  (header (key) (value)) 
+  (header (key) (value)) 
+  (request_section (form_params_section (key) (value)))))

@@ -3,10 +3,10 @@ module.exports = grammar({
 	extras: ($) => [$.comment, $._sp],
 	rules: {
 		source_file: ($) => repeat($.request),
-		request: ($) =>
-			seq($._method_section, repeat($.header), repeat($.request_section)),
+		request: ($) => seq($._method_section, repeat($.request_section)),
 
-		_method_section: ($) => seq($.method, $.url, repeat1($._lt)),
+		_method_section: ($) =>
+			seq($.method, $.url, repeat1($._lt), optional(repeat($.header))),
 		method: (_) =>
 			choice(
 				"GET",
